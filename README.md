@@ -22,14 +22,3 @@ Data Validation: Pydantic
 Containerization: Docker, Docker Compose
 Libraries: PyMuPDF, Pandas, LangChain
 
-Project Structure
-
-rag_llms/
-├── app/
-│   ├── functions.py         # Contains core functions for data extraction, RAG logic, etc.
-│   └── streamlit_app.py     # Contains the Streamlit UI code.
-├── .gitignore             # Specifies files to be ignored by Git.
-├── data_extraction_llms.ipynb # Jupyter Notebook for development and experimentation.
-├── docker-compose.yml       # Docker Compose file to manage the application service.
-├── Dockerfile               # Instructions for building the application's Docker image.
-└── requirements.txt         # Lists the required Python libraries.
