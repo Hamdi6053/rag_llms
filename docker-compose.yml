@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    container_name: streamlit-rag-app
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    volumes:
+      - ./app/db:/app/db
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  # Ollama servisi
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      # Windows'taki .ollama klasörünü container'daki /root/.ollama'ya bağla
+      - C:\Users\hamdi\.ollama:/root/.ollama
+    restart: unless-stopped
+
+# 'volumes' bölümü en alttan silindiği için burada artık hiçbir şey yok.
